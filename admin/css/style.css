@@ -1,0 +1,544 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v5.0.1 | 20191019
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+menu,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+	display: block;
+}
+
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+	display: none;
+}
+
+body {
+	line-height: 1;
+}
+
+menu,
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* global styles */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	transition: 0.1s linear;
+}
+
+*::-moz-placeholder {
+	font-family: "Roboto", sans-serif;
+}
+
+*:-ms-input-placeholder {
+	font-family: "Roboto", sans-serif;
+}
+
+*::placeholder {
+	font-family: "Roboto", sans-serif;
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+}
+
+::-webkit-scrollbar-track {
+	display: none;
+}
+
+::-webkit-scrollbar-thumb {
+	box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+input,
+button,
+textarea {
+	outline: 0;
+}
+
+button {
+	background: transparent;
+	padding: 0;
+	border: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+a:hover {
+	color: #838383;
+}
+
+/* end of global styles*/
+body {
+	font-family: "Roboto", sans-serif;
+}
+
+.main {
+	margin-bottom: 20px;
+}
+.main .container {
+	max-width: 1350px;
+	margin: 0 auto;
+}
+.main .main-top {
+	padding-bottom: 20px;
+	margin-top: 25px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #e5e5e5;
+}
+.main .main-top a {
+	font-size: 14px;
+	font-style: italic;
+	text-decoration: underline;
+}
+.main .main-top .main-title {
+	font-size: 32px;
+	font-weight: 500;
+	text-align: center;
+}
+.main .table {
+	margin: 0 auto;
+}
+.main .table-wrapper {
+	overflow: auto;
+}
+.main .table .id,
+.main .table .text,
+.main .table .category {
+	display: none;
+}
+.main .table .title {
+	font-weight: 700;
+}
+.main .table tr {
+	border-bottom: 1px solid #333;
+}
+.main .table td {
+	padding: 10px 10px;
+	font-size: 16px;
+	vertical-align: middle;
+}
+.main .table .btns {
+	display: flex;
+	align-items: center;
+}
+.main .table .btn {
+	padding: 8px 15px;
+	border: 1px solid #ccc;
+	background: transparent;
+	outline: none;
+	color: #333;
+	font-size: 14px;
+	cursor: pointer;
+}
+.main .table .btn:first-child {
+	margin-right: 5px;
+}
+.main .table .btn:hover {
+	background-color: #333;
+	color: #fff;
+}
+.main .form {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+}
+.main .form.active {
+	display: flex;
+}
+.main .form.category {
+	align-items: flex-start;
+}
+.main .form.category .form__title {
+	margin: 40px 0 20px;
+	font-size: 18px;
+	text-align: left;
+	border: 0;
+	padding: 0;
+}
+.main .form.category input {
+	display: block;
+	min-width: 215px;
+	padding: 7px 15px 7px 8px;
+	border: 1px solid #e5e5e5;
+	outline: none;
+	font-family: "Roboto", serif;
+	font-size: 15px;
+	line-height: 1.1em;
+	margin-bottom: 10px;
+}
+.main .form.category input::-moz-placeholder {
+	font-size: 14px;
+}
+.main .form.category input:-ms-input-placeholder {
+	font-size: 14px;
+}
+.main .form.category input::placeholder {
+	font-size: 14px;
+}
+.main .form.category .btn {
+	font-size: 14px;
+	padding: 8px 16px;
+	margin: 0;
+}
+.main .form__title {
+	margin: 50px 0 30px;
+	font-size: 30px;
+	font-weight: 500;
+	text-align: center;
+}
+.main .form__block {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 15px;
+}
+.main .form__block .title {
+	margin-bottom: 5px;
+}
+.main .form__block.categories .title {
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #e5e5e5;
+}
+.main .form__block .content {
+	display: flex;
+	flex-wrap: wrap;
+}
+.main .form__block input,
+.main .form__block textarea {
+	min-width: 450px;
+	padding: 10px 15px;
+	border: 1px solid #e5e5e5;
+	outline: none;
+	font-family: "Roboto", serif;
+	font-size: 15px;
+	line-height: 1.1em;
+}
+.main .form__block textarea {
+	resize: none;
+	height: 180px;
+}
+.main .form .btn {
+	display: block;
+	margin: 0 auto;
+	cursor: pointer;
+	padding: 10px 25px;
+	background: transparent;
+	border: 1px solid #e5e5e5;
+	outline: none;
+	font-size: 17px;
+	font-weight: 500;
+	transition: 0.2s linear;
+}
+.main .form .btn:hover {
+	background-color: #333;
+	color: #fff;
+}
+.main .form .upload-image input {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.main .form .upload-image label {
+	padding: 12px 20px;
+	display: block;
+	text-align: center;
+	border: 1px solid #e5e5e5;
+	font-size: 15px;
+	cursor: pointer;
+}
+.main .form .upload-image input:focus + label,
+.main .form .upload-image input + label:hover {
+	border-color: #e5e5e5;
+	color: #b3b5b9;
+}
+.main .form .upload-image input + label {
+	cursor: pointer;
+}
+.main .form .upload-image input.field_error + label {
+	border-color: red;
+}
+.main .categories-manage .table {
+	margin: 0;
+}
+.main .manage-btn {
+	border: 1px solid #a8a8a8;
+	padding: 4px 13px;
+	margin: 20px 0 0;
+	color: #333;
+	cursor: pointer;
+}
+.main .manage-btn.active,
+.main .manage-btn:hover {
+	background-color: #333;
+	color: #fff;
+}
+.main .manage-btn.active {
+	margin-bottom: 20px;
+}
+.main .manage-content {
+	max-height: 0;
+	pointer-events: none;
+	opacity: 0;
+}
+.main .manage-content.active {
+	max-height: 100%;
+	pointer-events: all;
+	opacity: 1;
+}
+.doesnt-exist {
+	margin-bottom: 20px;
+	text-align: center;
+	color: red;
+}
+.filters {
+	max-width: 400px;
+	margin-bottom: 35px;
+}
+.filters .row {
+	display: flex;
+	align-items: center;
+}
+.filters .btn {
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	background: transparent;
+	outline: none;
+	color: #333;
+	font-size: 14px;
+	cursor: pointer;
+}
+.filters .btn:hover {
+	background-color: #333;
+	color: #fff;
+}
+.filters .filters__title {
+	font-size: 18px;
+	font-weight: 500;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #e5e5e5;
+	display: block;
+}
+.filters input {
+	margin: 6px 0;
+	padding: 4px 12px;
+	border: 1px solid #e5e5e5;
+	outline: none;
+	font-family: "Roboto", serif;
+	font-size: 15px;
+}
+.filters .search {
+	padding: 5px 12px;
+}
+.filters .field {
+	margin: 10px 10px 0 0;
+}
+.filters .mini-title {
+	font-size: 14px;
+}
+.filters .categories {
+	margin: 15px 0 0;
+}
+.filters .categories__content {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 10px 0;
+}
+.filters .categories .title {
+	font-size: 14px;
+	padding-bottom: 4px;
+	border-bottom: 1px solid #e5e5e5;
+	display: block;
+}
+.category {
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+.category input {
+	display: none;
+}
+.category p {
+	font-size: 13px;
+	border: 1px solid #cecece;
+	margin-right: 5px;
+	padding: 5px;
+}
+.category input:checked ~ p {
+	background-color: #cecece;
+	color: #fff;
+}
+
+.main .form__block .hidden-radio {
+	min-width: 0;
+	height: 1px;
+	width: 1px;
+	margin: 0;
+	pointer-events: none;
+	opacity: 0;
+}
+#create-uploaded-image {
+	cursor: pointer;
+}
+@media (max-width: 1450px) {
+	.container {
+		max-width: 100%;
+		padding: 0 20px;
+	}
+}
+@media (max-width: 1150px) {
+	.main .news-manage table {
+		width: 1150px;
+	}
+}
+@media (max-width: 680px) {
+	.main-top {
+		flex-direction: column;
+		align-items: center;
+	}
+	.main-top .main-title {
+		margin: 15px 0;
+	}
+}
+
+@media (max-width: 500px) {
+	.form__inner {
+		width: 100%;
+	}
+	.main .form__block input,
+	.main .form__block textarea {
+		min-width: 0;
+		width: 100%;
+	}
+}
