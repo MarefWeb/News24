@@ -1,14 +1,19 @@
 <?php
 	require_once 'includes/db.php';
 	require_once 'includes/functions.php';
+	require_once 'includes/users/user_session.php';
+	session_start();
 
 	$query = "SELECT * FROM news";
 
 	$category = $_GET['category'];
 	$search = $_GET['search'];
 	$date = $_GET['date'];
+	$begin_date = $_GET['begin-date'];
+	$finish_date = $_GET['finish-date'];
+	$last_days = $_GET['last-days'];
 
-	if($category || $search || $date) {
+	if($category || $search || $date || $begin_date || $finish_date || $last_days) {
 		$query .= ' WHERE';
 
         $filters = [];
@@ -19,10 +24,16 @@
 			$filters[] = " title like '%$search%' or content like '%$search%'";
 		if($date)
 			$filters[] = " date = '$date'";
+		if($begin_date && $finish_date)
+			$filters[] = " date >= '$begin_date' and date <= '$finish_date'";
+		if($last_days) {
+			$date = date("Y-m-d", mktime(0, 0, 0, date('m'), date('d') - $last_days, date('Y')));
+			$filters[] = " date >= '$date'";
+		}
 
         $query .= implode(' and ', $filters);
 	}
-
+	
 	$query .= " ORDER BY date DESC, time DESC";
 	
 	$news_query = mysqli_query($db, $query);
@@ -118,15 +129,32 @@
 				<div class="main__inner">
 					<div class="news">
 						<div class="filters">
-							<form class="filters__content">
-								<div class="date">
-									<p>Фільтрувати за датою:</p>
+							<button class="content-btn btn btn_main">Фільтри</button>
+							<div class="filters__content">
+								<form action="index.php" method="get" class="date">
+									<p>За датою:</p>
 									<div class="field">
-										<input type="date" name="date" />
+										<input type="date" name="date" required />
 										<button class="btn submit">Ок</button>
 									</div>
-								</div>
-							</form>
+								</form>
+								<form action="index.php" method="get"  class="date">
+									<p>В проміжку між:</p>
+									<div class="field">
+										<input type="date" name="begin-date" required />
+										<p>і</p>
+										<input type="date" name="finish-date" required />
+										<button class="btn submit">Ок</button>
+									</div>
+								</form>
+								<form action="index.php" method="get"  class="date">
+									<p>За останні:</p>
+									<div class="field">
+										<input type="number" name="last-days" placeholder="Введіть кількість днів" required />
+										<button class="btn submit">Ок</button>
+									</div>
+								</form>
+							</div>
 						</div>
 						<p class="title">
 							<?php
@@ -140,7 +168,14 @@
 									return $formated_date;
 								}
 
-								if($date)
+								if($begin_date && $finish_date) {
+									$start = format_date($begin_date);
+									$end = format_date($finish_date);
+									echo "Новини в проміжку з $start по $end";
+								}
+								else if($last_days)
+									echo "Новини за останні $last_days дн.";
+								else if($date)
 									echo format_date($date);
 								else
 									echo 'Останні новини';

@@ -311,7 +311,7 @@ body {
 	margin: 0;
 }
 .main .form__title {
-	margin: 50px 0 30px;
+	margin: 50px 0 25px;
 	font-size: 30px;
 	font-weight: 500;
 	text-align: center;
@@ -323,6 +323,9 @@ body {
 }
 .main .form__block .title {
 	margin-bottom: 5px;
+}
+.main .form__block .title span {
+	font-size: 12px;
 }
 .main .form__block.categories .title {
 	padding-bottom: 5px;
@@ -346,6 +349,20 @@ body {
 .main .form__block textarea {
 	resize: none;
 	height: 180px;
+}
+.main .form__block.checkbox {
+	flex-direction: row;
+	align-items: center;
+}
+.main .form__block.checkbox input {
+	min-width: unset;
+	margin: 0 5px 0;
+	width: 10px;
+	height: 10px;
+}
+.main .form__block.checkbox p {
+	margin: 0;
+	font-size: 12px;
 }
 .main .form .btn {
 	display: block;
@@ -390,8 +407,13 @@ body {
 .main .form .upload-image input.field_error + label {
 	border-color: red;
 }
-.main .categories-manage .table {
+.main .categories-manage .table,
+.main .access-manage .table {
 	margin: 0;
+}
+.main .access-manage .table .btn {
+	font-size: 12px;
+	padding: 8px;
 }
 .main .manage-btn {
 	border: 1px solid #a8a8a8;
@@ -508,8 +530,16 @@ body {
 	pointer-events: none;
 	opacity: 0;
 }
-#create-uploaded-image {
-	cursor: pointer;
+.annotation {
+	margin-top: 12px;
+	font-size: 12px;
+	display: flex;
+	justify-content: center;
+	color: #5e5edf;
+	text-decoration: underline;
+}
+.annotation:hover {
+	color: #4f4fc4;
 }
 @media (max-width: 1450px) {
 	.container {

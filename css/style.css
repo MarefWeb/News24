@@ -355,7 +355,35 @@ body {
 	font-size: 16px;
 	margin-top: 12px;
 }
-
+.account {
+	margin-left: 20px;
+	display: flex;
+	align-items: center;
+	padding-top: 3px;
+}
+.account .btn {
+	font-size: 14px;
+	border: 1px solid #3b3b3b;
+	padding: 6px 12px;
+}
+.account .btn:hover {
+	background-color: #3b3b3b;
+	color: #fff;
+}
+.account .btn:first-child {
+	margin-right: 10px;
+}
+.account .leave {
+	margin-left: 11px;
+	margin-top: 1px;
+}
+.account .leave svg {
+	width: 15px;
+	height: 15px;
+}
+.account .leave:hover svg {
+	fill: rgba(0, 0, 0, 0.5);
+}
 .main {
 	margin: 40px 0 20px;
 }
@@ -367,6 +395,18 @@ body {
 }
 .main__inner .news .filters {
 	margin: 0 0 20px;
+}
+.main__inner .news .filters__content {
+	border: 1px solid #f3f3f3;
+	max-height: 0;
+	opacity: 0;
+	pointer-events: none;
+}
+.main__inner .news .filters .btn_main.active ~ .filters__content {
+	max-height: 100%;
+	opacity: 1;
+	pointer-events: all;
+	padding: 14px 20px;
 }
 .main__inner .news .filters .btn {
 	font-size: 14px;
@@ -386,8 +426,28 @@ body {
 	font-size: 16px;
 	padding: 6px 17px;
 }
+.main__inner .news .filters .date {
+	margin-top: 26px;
+	padding-top: 26px;
+	border-top: 1px solid #f3f3f3;
+}
+.main__inner .news .filters .date:first-child {
+	border: 0;
+	padding-top: 0;
+}
+.main__inner .news .filters .date:first-child {
+	margin-top: 13px;
+}
+.main__inner .news .filters .date:last-child {
+	margin-bottom: 13px;
+}
 .main__inner .news .filters .date .field {
 	display: flex;
+	align-items: flex-end;
+}
+.main__inner .news .filters .date .field p {
+	margin: 0 16px;
+	font-size: 14px;
 }
 .main__inner .news .filters .date input {
 	height: 22px;
@@ -396,13 +456,13 @@ body {
 	border-bottom: 1px solid #000;
 }
 .main__inner .news .filters .date button {
-	padding: 0 13px;
+	padding: 2px 13px;
 	background-color: #fff;
 	font-size: 12px;
 }
 .main__inner .news .filters .date p {
-	margin-bottom: 10px;
-	font-size: 12px;
+	margin-bottom: 8px;
+	font-size: 13px;
 }
 .main__inner .news .title {
 	font-size: 40px;
@@ -500,6 +560,45 @@ body {
 	line-height: 2.5rem;
 	margin: 8px 0 28px;
 }
+.news__content .edit-form textarea {
+	width: 100%;
+	resize: none;
+	border: 1px solid #ccc;
+	font-family: "Roboto", sans-serif;
+	padding: 5px 10px;
+}
+.news__content .edit-form input {
+	width: 100%;
+	border: 1px solid #ccc;
+	font-family: "Roboto", sans-serif;
+}
+.news__content .edit-form .title {
+	border: 0;
+	border-bottom: 1px solid #ccc;
+}
+.news__content .edit-form .news__content-text {
+	margin: 10px 0 20px 0;
+}
+.news__content .edit-form .btn {
+	margin-top: 20px;
+	font-size: 14px;
+	border: 1px solid #3b3b3b;
+	padding: 6px 12px;
+}
+.news__content .edit-form .btn:hover {
+	background-color: #3b3b3b;
+	color: #fff;
+}
+.hidden {
+	display: none;
+}
+.news__content .edit-form .tags__content {
+	height: 20px;
+	margin-left: 5px;
+	border: 0;
+	border-bottom: 1px solid #ccc;
+	padding: 0 0 0 5px;
+}
 .news__content img {
 	width: 100%;
 	-o-object-fit: contain;
@@ -532,7 +631,7 @@ body {
 .news__content .other-news .title {
 	font-size: 26px;
 	font-weight: 500;
-	margin: 50px 0 10px;
+	margin: 40px 0 10px;
 }
 .news__content .other-news .content {
 	border: 1px solid #e2e2e2;
@@ -554,6 +653,109 @@ body {
 	color: #cecece;
 }
 
+.comments {
+	margin-top: 50px;
+}
+.comments .title {
+	padding-bottom: 5px;
+	border-bottom: 1px solid #cecece;
+	margin: 0;
+}
+.comments .add form {
+	margin: 20px 0 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.comments .add form textarea {
+	min-width: 450px;
+	height: 80px;
+	padding: 10px 15px;
+	border: 1px solid #e5e5e5;
+	outline: none;
+	font-family: "Roboto", serif;
+	font-size: 15px;
+	line-height: 1.1em;
+	resize: none;
+}
+.comments .add form textarea::-moz-placeholder {
+	font-family: "Roboto", serif;
+	font-size: 15px;
+}
+.comments .add form textarea:-ms-input-placeholder {
+	font-family: "Roboto", serif;
+	font-size: 15px;
+}
+.comments .add form textarea::placeholder {
+	font-family: "Roboto", serif;
+	font-size: 15px;
+}
+.comments .add form button {
+	margin-top: 10px;
+	display: block;
+	cursor: pointer;
+	padding: 8px 15px;
+	background: transparent;
+	border: 1px solid #e5e5e5;
+	outline: none;
+	font-size: 15px;
+	font-weight: 500;
+	transition: 0.2s linear;
+}
+.comments .add form button:hover {
+	background-color: #333;
+	color: #fff;
+}
+.comments .content .item {
+	margin-top: 30px;
+	display: flex;
+}
+.comments .content .item:first-child {
+	margin-top: 20px;
+}
+.comments .content .item .icon {
+	display: block;
+	width: 65px;
+	height: 65px;
+}
+.comments .content .item .right {
+	margin: 5px 0 0 15px;
+	display: flex;
+	flex-direction: column;
+}
+.comments .content .item .name {
+	margin-bottom: 12px;
+	font-size: 14px;
+	font-weight: 500;
+	color: #9099ae;
+}
+.edit {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-bottom: 28px;
+}
+.edit-btn {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+.edit-btn svg {
+	width: 22px;
+	height: 22px;
+	pointer-events: none;
+}
+.edit-btn:hover svg {
+	fill: rgba(0, 0, 0, 0.5);
+}
+.edit-btn span {
+	margin-left: 8px;
+	font-size: 14px;
+	pointer-events: none;
+}
+.edit-btn:hover span {
+	color: rgba(0, 0, 0, 0.5);
+}
 @media (max-width: 1260px) {
 	.container {
 		padding: 0 20px;

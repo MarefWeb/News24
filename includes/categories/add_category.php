@@ -4,6 +4,9 @@ require_once '../functions.php';
 
 $name = $_GET['name'];
 
-mysqli_query($db, "INSERT INTO categories (name) VALUES ('$name')");
+$stmt = $mysqli->prepare("INSERT INTO categories (name) VALUES (?)");
+$stmt->bind_param("s", $name);
+$stmt->execute();
+$stmt->close();
 
 header("Location: /admin");
